@@ -1,0 +1,19 @@
+<?php
+if($_SERVER["REQUEST_METHOD"]=="POST"){
+    $name = trim($_POST["name"]);
+    $email = trim($_POST["email"]);
+    $msg = trim($_POST["message"]);
+
+    if($name && $email && $msg && filter_var($email,FILTER_VALIDATE_EMAIL)){
+        echo "✅ Thank you, $name! Message sent.";
+    } else {
+        echo "❌ All fields are required & email must be valid.";
+    }
+}
+?>
+<form method="post">
+    Name: <input name="name"><br>
+    Email: <input name="email"><br>
+    Message: <textarea name="message"></textarea><br>
+    <button type="submit">Send</button>
+</form>
