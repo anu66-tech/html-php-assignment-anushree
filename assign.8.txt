@@ -1,26 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Greeting Form</title>
+</head>
+<body>
+
+<h2>Enter Your Name</h2>
+
+<form method="post" action="">
+    Name: <input type="text" name="username">
+    <input type="submit" value="Submit">
+</form>
+
 <?php
-function deal($priceA, $sizeA, $priceB, $sizeB) {
-    // Calculate cost per liter
-    $costPerLitreA = $priceA / $sizeA;
-    $costPerLitreB = $priceB / $sizeB;
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = trim($_POST['username']); // Remove extra spaces
 
-    echo "Drink A: Rs. $priceA for $sizeA L → Cost per litre: Rs. " . number_format($costPerLitreA, 2) . "<br>";
-    echo "Drink B: Rs. $priceB for $sizeB L → Cost per litre: Rs. " . number_format($costPerLitreB, 2) . "<br><br>";
-
-    // Compare and decide
-    if ($costPerLitreA < $costPerLitreB) {
-        echo "You should choose Drink A to save money!";
-    } elseif ($costPerLitreB < $costPerLitreA) {
-        echo "You should choose Drink B to save money!";
+    if (empty($name)) {
+        echo "<p style='color:red;'>Error: Name field cannot be blank!</p>";
     } else {
-        echo "Both drinks have the same value for money.";
+        echo "<h3>Hello, Welcome to Everyone!</h3>";
+        echo "<p>Have a nice day!!</p>";
     }
 }
-
-// Given values
-$priceA = 25; $sizeA = 1.1; // 1.1 liters
-$priceB = 23; $sizeB = 0.9; // 0.9 liters
-
-// Call the function
-deal($priceA, $sizeA, $priceB, $sizeB);
 ?>
+
+</body>
+</html>
