@@ -1,0 +1,15 @@
+<?php
+// Student marks
+$marks = 68; // You can change this value or take from user input
+
+// Check grade based on marks
+if ($marks >= 75) {
+    echo "Grade: First Class";
+} elseif ($marks >= 60 && $marks < 75) {
+    echo "Grade: Second Class";
+} elseif ($marks >= 40 && $marks < 60) {
+    echo "Grade: Third Class";
+} else {
+    echo "Grade: Fail";
+}
+?>
