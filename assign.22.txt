@@ -1,0 +1,8 @@
+<?php
+$text = "PHP is fun. I like PHP because PHP is easy to learn.";
+$word = "PHP";
+
+$count = substr_count(strtolower($text), strtolower($word));
+
+echo "The word '$word' occurs $count times in the given string.";
+?>

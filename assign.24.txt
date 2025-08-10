@@ -1,0 +1,48 @@
+<?php
+$str = "  Hello World! Welcome to PHP String Functions.  ";
+
+// 1. Length of string
+echo "Length: " . strlen($str) . "<br>";
+
+// 2. Word count
+echo "Word Count: " . str_word_count($str) . "<br>";
+
+// 3. Reverse string
+echo "Reverse: " . strrev($str) . "<br>";
+
+// 4. Position of a word
+echo "Position of 'World': " . strpos($str, "World") . "<br>";
+
+// 5. Replace word
+echo "Replace 'World' with 'Universe': " . str_replace("World", "Universe", $str) . "<br>";
+
+// 6. Convert to uppercase
+echo "Uppercase: " . strtoupper($str) . "<br>";
+
+// 7. Convert to lowercase
+echo "Lowercase: " . strtolower($str) . "<br>";
+
+// 8. First letter uppercase of each word
+echo "Ucwords: " . ucwords(strtolower($str)) . "<br>";
+
+// 9. Trim spaces
+echo "Trim: '" . trim($str) . "'<br>";
+
+// 10. Substring
+echo "Substring (6, 5): " . substr($str, 6, 5) . "<br>";
+
+// 11. Repeat string
+echo "Repeat: " . str_repeat("PHP ", 3) . "<br>";
+
+// 12. Compare strings
+echo "Compare ('abc','ABC'): " . strcmp("abc", "ABC") . "<br>";
+
+// 13. Explode into array
+$arr = explode(" ", trim($str));
+echo "Explode Array: ";
+print_r($arr);
+echo "<br>";
+
+// 14. Implode back to string
+echo "Implode: " . implode("-", $arr) . "<br>";
+?>

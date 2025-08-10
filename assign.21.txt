@@ -1,0 +1,9 @@
+<?php
+function isLeapYear($year){
+    return ($year % 4 == 0 && $year % 100 != 0) || ($year % 400 == 0);
+}
+
+// Example
+$year = 2024;
+echo isLeapYear($year) ? "$year is a Leap Year" : "$year is NOT a Leap Year";
+?>

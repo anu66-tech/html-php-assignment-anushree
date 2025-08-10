@@ -1,0 +1,20 @@
+1.rand()
+
+echo rand();         // Random number
+echo rand(1, 100);   // Random number between 1 and 100
+
+2. abs() 
+
+echo abs(-25);  
+
+3. str_replace() 
+
+$text = "Hello World";
+echo str_replace("World", "PHP", $
+
+4. pi() 
+echo pi(); // Output:text);
+
+5. ceil() 
+echo ceil(4.3);  // Output: 5
+echo ceil(9.1);  // Output: 10

@@ -1,0 +1,19 @@
+<?php
+// Prioritize POST over GET
+$username = $_POST['username'] ?? $_GET['username'] ?? '';
+$password = $_POST['password'] ?? $_GET['password'] ?? '';
+
+if ($username && $password) {
+    echo "Username: $username<br>";
+    echo "Password: $password<br>";
+} else {
+    echo "Please enter login details.";
+}
+?>
+
+<!-- HTML Form -->
+<form method="post">
+    Username: <input type="text" name="username"><br>
+    Password: <input type="password" name="password"><br>
+    <input type="submit" value="Login">
+</form>
