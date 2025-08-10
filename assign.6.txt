@@ -1,0 +1,51 @@
+<?php
+session_start(); // Start the session
+
+// ---- Handle POST data ----
+if (isset($_POST['name']) && isset($_POST['age'])) {
+    $_SESSION['session_name'] = $_POST['name']; // Save in session
+    setcookie("cookie_name", $_POST['name'], time() + 3600, "/"); // Save in cookie
+}
+
+// ---- Display GET, POST, SESSION, COOKIE data ----
+if (isset($_GET['name'])) {
+    echo "<h3>GET Method:</h3>";
+    echo "Name: " . $_GET['name'] . "<br>";
+    echo "Age: " . $_GET['age'] . "<br><hr>";
+}
+
+if (isset($_POST['name'])) {
+    echo "<h3>POST Method:</h3>";
+    echo "Name: " . $_POST['name'] . "<br>";
+    echo "Age: " . $_POST['age'] . "<br><hr>";
+}
+
+if (isset($_SESSION['session_name'])) {
+    echo "<h3>SESSION Method:</h3>";
+    echo "Name stored in session: " . $_SESSION['session_name'] . "<br><hr>";
+}
+
+if (isset($_COOKIE['cookie_name'])) {
+    echo "<h3>COOKIE Method:</h3>";
+    echo "Name stored in cookie: " . $_COOKIE['cookie_name'] . "<br><hr>";
+}
+?>
+
+<h2>Passing Data in PHP - All Methods</h2>
+
+<!-- GET Method Form -->
+<form method="GET" action="">
+    <h3>GET Method</h3>
+    Name: <input type="text" name="name" required>
+    Age: <input type="number" name="age" required>
+    <input type="submit" value="Send via GET">
+</form>
+<hr>
+
+<!-- POST Method Form -->
+<form method="POST" action="">
+    <h3>POST Method</h3>
+    Name: <input type="text" name="name" required>
+    Age: <input type="number" name="age" required>
+    <input type="submit" value="Send via POST">
+</form>
